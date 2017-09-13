@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui container">
+    <div class="ui card center aligned">
+      <div class="image">
+        <img src="<%= blog.image %>">
+      </div>
+      <div class="content">
+        <a class="header"><%= blog.title %></a>
+        <div class="meta">
+          <span class="date"><%= blog.created.toDateString() %></span> 
+        </div><hr>
+        <div class="description">
+          <div class="ui container">
+              <%= blog.body %>
+          </div>
+        </div>
+        <form id="delete" action="/blog/<%= blog._id %>?_method=DELETE" method="POST"><br>
+            <button class="ui inverted red button">DELETE</button>
+        </form>
+        <a href="/blog/<%= blog._id %>/edit" class="ui inverted orange button">UPDATE</a>
+      </div>
+    </div>
+</div>
+<% include ./partials/footer %>
+    

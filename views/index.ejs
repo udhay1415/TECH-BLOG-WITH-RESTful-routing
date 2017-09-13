@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+
+<div class="ui container">
+    <div class="ui three column grid">
+        <% blog.forEach(function(b1){ %>
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="image">
+                <img src="<%= b1.image %>" style="height: 300px;width: 357px;">
+              </div>
+              <div class="content">
+                <a class="header"><%= b1.title %></a>
+                <div class="meta">
+                  <span class="date"><%= b1.created.toDateString() %></span> 
+                </div><hr>
+                <div class="description">
+                  <%= b1.body.substring(0,100) %>... <br><br><a href="/blog/<%= b1._id %>" class="ui inverted blue button small">READ MORE <i class="caret right icon"></i> </a> <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+    </div>
+</div>
+<% include ./partials/footer %>

@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+
+<div class="ui container">
+    
+    <h2 class="ui center aligned icon header">
+      <i id="form_img" class="circular loading write icon"></i>
+      NEW POST
+    </h2>
+    
+    
+<!--FORM-->
+    <form class="ui form" action="/blog" method="POST">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="blog[title]" placeholder="First Name">
+      </div>
+      <div class="field">
+        <label>Image url</label>
+        <input type="text" name="blog[image]" placeholder="Last Name">
+      </div>
+      <div class="field">
+        <label>Blog content</label>
+        <textarea name="blog[body]" placeholder="blog content"></textarea>
+      </div>
+      
+      <input type="submit" class="ui inverted green button">
+    </form>
+</div>
+
+<% include ./partials/footer %>
+
